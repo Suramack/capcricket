@@ -12,5 +12,9 @@ abstract class Strings {
   static var requiredField = 'Required Field';
 
   static var capitalCricket = 'Capital Cricket';
+  
+  static var over = 'Over';
+
+  static var na = 'NA';
 
 }
