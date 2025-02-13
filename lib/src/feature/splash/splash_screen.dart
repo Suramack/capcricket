@@ -1,9 +1,11 @@
 import 'package:capcricket/design_system/loader/brand_loader.dart';
+import 'package:capcricket/route/route_name.dart';
 import 'package:capcricket/src/feature/live/presentation/provider/match_provider.dart';
 import 'package:capcricket/src/theme/colors.dart';
 import 'package:capcricket/util/assets/assets.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:go_router/go_router.dart';
 
 class SplashScreen extends ConsumerStatefulWidget {
   const SplashScreen({super.key});
@@ -19,12 +21,15 @@ class _SplashScreenState extends ConsumerState<SplashScreen> {
   void initState() {
     super.initState();
     WidgetsBinding.instance.addPostFrameCallback((_) async {
-      // fetchData();
+      fetchData();
     });
   }
 
-  Future<void> fetchData() async {
-    await provider.getLiveMatch();
+  void fetchData() {
+    Future.delayed(const Duration(seconds: 1), () {
+      // ignore: use_build_context_synchronously
+      context.go(RouteName.home);
+    });
   }
 
   @override

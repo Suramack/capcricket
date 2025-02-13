@@ -10,4 +10,7 @@ abstract class Strings {
   static const somethingWentWrong = 'Somthing went wrong';
 
   static var requiredField = 'Required Field';
+
+  static var capitalCricket = 'Capital Cricket';
+
 }

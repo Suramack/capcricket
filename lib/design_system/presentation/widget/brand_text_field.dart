@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
-import '../label/label.dart';
+import '../../label/label.dart';
 
 class BrandTextField extends StatelessWidget {
   final String? hintText, errorString;

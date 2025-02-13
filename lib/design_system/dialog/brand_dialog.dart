@@ -1,6 +1,6 @@
 import 'package:capcricket/design_system/label/label.dart';
-import 'package:capcricket/design_system/widget/brand_button.dart';
-import 'package:capcricket/design_system/widget/brand_text.dart';
+import 'package:capcricket/design_system/presentation/widget/brand_button.dart';
+import 'package:capcricket/design_system/presentation/widget/brand_text.dart';
 import 'package:capcricket/src/theme/colors.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
