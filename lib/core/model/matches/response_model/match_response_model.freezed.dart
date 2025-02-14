@@ -1082,6 +1082,174 @@ abstract class _Team1Score implements Team1Score {
       throw _privateConstructorUsedError;
 }
 
+Team2Score _$Team2ScoreFromJson(Map<String, dynamic> json) {
+  return _Team2Score.fromJson(json);
+}
+
+/// @nodoc
+mixin _$Team2Score {
+  Inngs1? get inngs1 => throw _privateConstructorUsedError;
+
+  /// Serializes this Team2Score to a JSON map.
+  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
+
+  /// Create a copy of Team2Score
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  $Team2ScoreCopyWith<Team2Score> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class $Team2ScoreCopyWith<$Res> {
+  factory $Team2ScoreCopyWith(
+          Team2Score value, $Res Function(Team2Score) then) =
+      _$Team2ScoreCopyWithImpl<$Res, Team2Score>;
+  @useResult
+  $Res call({Inngs1? inngs1});
+
+  $Inngs1CopyWith<$Res>? get inngs1;
+}
+
+/// @nodoc
+class _$Team2ScoreCopyWithImpl<$Res, $Val extends Team2Score>
+    implements $Team2ScoreCopyWith<$Res> {
+  _$Team2ScoreCopyWithImpl(this._value, this._then);
+
+  // ignore: unused_field
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
+
+  /// Create a copy of Team2Score
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? inngs1 = freezed,
+  }) {
+    return _then(_value.copyWith(
+      inngs1: freezed == inngs1
+          ? _value.inngs1
+          : inngs1 // ignore: cast_nullable_to_non_nullable
+              as Inngs1?,
+    ) as $Val);
+  }
+
+  /// Create a copy of Team2Score
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $Inngs1CopyWith<$Res>? get inngs1 {
+    if (_value.inngs1 == null) {
+      return null;
+    }
+
+    return $Inngs1CopyWith<$Res>(_value.inngs1!, (value) {
+      return _then(_value.copyWith(inngs1: value) as $Val);
+    });
+  }
+}
+
+/// @nodoc
+abstract class _$$Team2ScoreImplCopyWith<$Res>
+    implements $Team2ScoreCopyWith<$Res> {
+  factory _$$Team2ScoreImplCopyWith(
+          _$Team2ScoreImpl value, $Res Function(_$Team2ScoreImpl) then) =
+      __$$Team2ScoreImplCopyWithImpl<$Res>;
+  @override
+  @useResult
+  $Res call({Inngs1? inngs1});
+
+  @override
+  $Inngs1CopyWith<$Res>? get inngs1;
+}
+
+/// @nodoc
+class __$$Team2ScoreImplCopyWithImpl<$Res>
+    extends _$Team2ScoreCopyWithImpl<$Res, _$Team2ScoreImpl>
+    implements _$$Team2ScoreImplCopyWith<$Res> {
+  __$$Team2ScoreImplCopyWithImpl(
+      _$Team2ScoreImpl _value, $Res Function(_$Team2ScoreImpl) _then)
+      : super(_value, _then);
+
+  /// Create a copy of Team2Score
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? inngs1 = freezed,
+  }) {
+    return _then(_$Team2ScoreImpl(
+      inngs1: freezed == inngs1
+          ? _value.inngs1
+          : inngs1 // ignore: cast_nullable_to_non_nullable
+              as Inngs1?,
+    ));
+  }
+}
+
+/// @nodoc
+@JsonSerializable()
+class _$Team2ScoreImpl implements _Team2Score {
+  _$Team2ScoreImpl({this.inngs1});
+
+  factory _$Team2ScoreImpl.fromJson(Map<String, dynamic> json) =>
+      _$$Team2ScoreImplFromJson(json);
+
+  @override
+  final Inngs1? inngs1;
+
+  @override
+  String toString() {
+    return 'Team2Score(inngs1: $inngs1)';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$Team2ScoreImpl &&
+            (identical(other.inngs1, inngs1) || other.inngs1 == inngs1));
+  }
+
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  int get hashCode => Object.hash(runtimeType, inngs1);
+
+  /// Create a copy of Team2Score
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$Team2ScoreImplCopyWith<_$Team2ScoreImpl> get copyWith =>
+      __$$Team2ScoreImplCopyWithImpl<_$Team2ScoreImpl>(this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$$Team2ScoreImplToJson(
+      this,
+    );
+  }
+}
+
+abstract class _Team2Score implements Team2Score {
+  factory _Team2Score({final Inngs1? inngs1}) = _$Team2ScoreImpl;
+
+  factory _Team2Score.fromJson(Map<String, dynamic> json) =
+      _$Team2ScoreImpl.fromJson;
+
+  @override
+  Inngs1? get inngs1;
+
+  /// Create a copy of Team2Score
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  _$$Team2ScoreImplCopyWith<_$Team2ScoreImpl> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
 SeriesMatch _$SeriesMatchFromJson(Map<String, dynamic> json) {
   return _SeriesMatch.fromJson(json);
 }
@@ -2554,6 +2722,7 @@ MatchScore _$MatchScoreFromJson(Map<String, dynamic> json) {
 /// @nodoc
 mixin _$MatchScore {
   Team1Score? get team1Score => throw _privateConstructorUsedError;
+  Team2Score? get team2Score => throw _privateConstructorUsedError;
 
   /// Serializes this MatchScore to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
@@ -2571,9 +2740,10 @@ abstract class $MatchScoreCopyWith<$Res> {
           MatchScore value, $Res Function(MatchScore) then) =
       _$MatchScoreCopyWithImpl<$Res, MatchScore>;
   @useResult
-  $Res call({Team1Score? team1Score});
+  $Res call({Team1Score? team1Score, Team2Score? team2Score});
 
   $Team1ScoreCopyWith<$Res>? get team1Score;
+  $Team2ScoreCopyWith<$Res>? get team2Score;
 }
 
 /// @nodoc
@@ -2592,12 +2762,17 @@ class _$MatchScoreCopyWithImpl<$Res, $Val extends MatchScore>
   @override
   $Res call({
     Object? team1Score = freezed,
+    Object? team2Score = freezed,
   }) {
     return _then(_value.copyWith(
       team1Score: freezed == team1Score
           ? _value.team1Score
           : team1Score // ignore: cast_nullable_to_non_nullable
               as Team1Score?,
+      team2Score: freezed == team2Score
+          ? _value.team2Score
+          : team2Score // ignore: cast_nullable_to_non_nullable
+              as Team2Score?,
     ) as $Val);
   }
 
@@ -2614,6 +2789,20 @@ class _$MatchScoreCopyWithImpl<$Res, $Val extends MatchScore>
       return _then(_value.copyWith(team1Score: value) as $Val);
     });
   }
+
+  /// Create a copy of MatchScore
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $Team2ScoreCopyWith<$Res>? get team2Score {
+    if (_value.team2Score == null) {
+      return null;
+    }
+
+    return $Team2ScoreCopyWith<$Res>(_value.team2Score!, (value) {
+      return _then(_value.copyWith(team2Score: value) as $Val);
+    });
+  }
 }
 
 /// @nodoc
@@ -2624,10 +2813,12 @@ abstract class _$$MatchScoreImplCopyWith<$Res>
       __$$MatchScoreImplCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call({Team1Score? team1Score});
+  $Res call({Team1Score? team1Score, Team2Score? team2Score});
 
   @override
   $Team1ScoreCopyWith<$Res>? get team1Score;
+  @override
+  $Team2ScoreCopyWith<$Res>? get team2Score;
 }
 
 /// @nodoc
@@ -2644,12 +2835,17 @@ class __$$MatchScoreImplCopyWithImpl<$Res>
   @override
   $Res call({
     Object? team1Score = freezed,
+    Object? team2Score = freezed,
   }) {
     return _then(_$MatchScoreImpl(
       team1Score: freezed == team1Score
           ? _value.team1Score
           : team1Score // ignore: cast_nullable_to_non_nullable
               as Team1Score?,
+      team2Score: freezed == team2Score
+          ? _value.team2Score
+          : team2Score // ignore: cast_nullable_to_non_nullable
+              as Team2Score?,
     ));
   }
 }
@@ -2657,17 +2853,19 @@ class __$$MatchScoreImplCopyWithImpl<$Res>
 /// @nodoc
 @JsonSerializable()
 class _$MatchScoreImpl implements _MatchScore {
-  _$MatchScoreImpl({this.team1Score});
+  _$MatchScoreImpl({this.team1Score, this.team2Score});
 
   factory _$MatchScoreImpl.fromJson(Map<String, dynamic> json) =>
       _$$MatchScoreImplFromJson(json);
 
   @override
   final Team1Score? team1Score;
+  @override
+  final Team2Score? team2Score;
 
   @override
   String toString() {
-    return 'MatchScore(team1Score: $team1Score)';
+    return 'MatchScore(team1Score: $team1Score, team2Score: $team2Score)';
   }
 
   @override
@@ -2676,12 +2874,14 @@ class _$MatchScoreImpl implements _MatchScore {
         (other.runtimeType == runtimeType &&
             other is _$MatchScoreImpl &&
             (identical(other.team1Score, team1Score) ||
-                other.team1Score == team1Score));
+                other.team1Score == team1Score) &&
+            (identical(other.team2Score, team2Score) ||
+                other.team2Score == team2Score));
   }
 
   @JsonKey(includeFromJson: false, includeToJson: false)
   @override
-  int get hashCode => Object.hash(runtimeType, team1Score);
+  int get hashCode => Object.hash(runtimeType, team1Score, team2Score);
 
   /// Create a copy of MatchScore
   /// with the given fields replaced by the non-null parameter values.
@@ -2700,13 +2900,17 @@ class _$MatchScoreImpl implements _MatchScore {
 }
 
 abstract class _MatchScore implements MatchScore {
-  factory _MatchScore({final Team1Score? team1Score}) = _$MatchScoreImpl;
+  factory _MatchScore(
+      {final Team1Score? team1Score,
+      final Team2Score? team2Score}) = _$MatchScoreImpl;
 
   factory _MatchScore.fromJson(Map<String, dynamic> json) =
       _$MatchScoreImpl.fromJson;
 
   @override
   Team1Score? get team1Score;
+  @override
+  Team2Score? get team2Score;
 
   /// Create a copy of MatchScore
   /// with the given fields replaced by the non-null parameter values.

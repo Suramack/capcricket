@@ -1,8 +1,11 @@
 import 'package:capcricket/design_system/presentation/provider/bottom_nav_provider.dart';
 import 'package:capcricket/design_system/presentation/widget/base_layout.dart';
-import 'package:capcricket/design_system/style/text_style.dart';
+import 'package:capcricket/design_system/presentation/widget/brand_sized_box.dart';
+import 'package:capcricket/design_system/style/brand_space.dart';
 import 'package:capcricket/src/feature/home/presentation/widget/live_score_carousel_widget.dart';
-import 'package:capcricket/src/theme/colors.dart';
+import 'package:capcricket/src/feature/live/presentation/screen/live_screen.dart';
+import 'package:capcricket/src/feature/news/presentation/screen/news_screen.dart';
+import 'package:capcricket/src/feature/recent/presentation/screen/recent_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
@@ -18,14 +21,8 @@ class _HomeScreenState extends ConsumerState<HomeScreen> {
 
   List<Widget> screen = [
     Home(),
-    Text(
-      'Live',
-      style: BrandTextStyle(color: AppColor.grey166),
-    ),
-    Text(
-      'Recent',
-      style: BrandTextStyle(color: AppColor.grey166),
-    ),
+    LiveScreen(),
+    RecentScreen(),
   ];
   @override
   Widget build(BuildContext context) {
@@ -46,7 +43,13 @@ class Home extends StatelessWidget {
     return Padding(
       padding: const EdgeInsets.all(12),
       child: Column(
-        children: [LiveScoreCarouselWidget()],
+        children: [
+          LiveScoreCarouselWidget(),
+          BrandVSpace(
+            height: BrandSpace.gap14,
+          ),
+          NewsScreen(),
+        ],
       ),
     );
   }

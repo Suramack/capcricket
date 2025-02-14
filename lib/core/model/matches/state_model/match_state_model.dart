@@ -5,7 +5,9 @@ part 'match_state_model.freezed.dart';
 @freezed
 class MatchState with _$MatchState {
   const factory MatchState({
-    @Default(false) bool isLoading,
+    @Default(false) bool isLiveMatchCaruoselLoading,
+    @Default(false) bool isLiveMatchLoading,
+    @Default(false) bool isRecentMatchLoading,
     @Default(false) bool isError,
     @Default(null) MatchResponseModel? liveMatchResponse,
     @Default(null) MatchResponseModel? recentMatchResponse,

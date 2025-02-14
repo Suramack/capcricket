@@ -1,6 +1,8 @@
+import 'package:capcricket/design_system/font/brand_font.dart';
 import 'package:capcricket/design_system/label/label.dart';
 import 'package:capcricket/design_system/presentation/widget/brand_text.dart';
 import 'package:capcricket/design_system/style/text_style.dart';
+import 'package:capcricket/src/feature/home/presentation/widget/team_image_avatar.dart';
 import 'package:capcricket/src/theme/colors.dart';
 import 'package:capcricket/util/assets/assets.dart';
 import 'package:flutter/material.dart';
@@ -9,6 +11,7 @@ class LiveMatchCardWidget extends StatelessWidget {
   final String? title,
       timeAndDate,
       status,
+      state,
       team1Name,
       team2Name,
       team1Over,
@@ -30,6 +33,7 @@ class LiveMatchCardWidget extends StatelessWidget {
     this.team2Score,
     this.team1Wicket,
     this.team2Wicket,
+    this.state,
   });
 
   @override
@@ -46,35 +50,53 @@ class LiveMatchCardWidget extends StatelessWidget {
             data: timeAndDate ?? Strings.na,
           ),
           BrandText(
-            data: status ?? "",
+            data: state ?? "",
             textStyle: BrandTextStyle(color: AppColor.red),
           ),
           Row(
+            mainAxisAlignment: MainAxisAlignment.spaceAround,
             children: [
               Column(
                 children: [
-                  Image.asset(Assets.vsImage),
+                  TeamImageAvatar(title: team1Name),
                   BrandText(
-                    data: '${team1Score ?? ""}/${team1Wicket ?? ""}',
+                    data: '${team1Score ?? "0"}/${team1Wicket ?? "0"}',
                   ),
                   BrandText(
-                    data: team1Over ?? "" " ${Strings.over}",
+                    data: team1Over ?? "",
+                    textStyle: BrandTextStyle(
+                        fontSize: BrandFontSize.subtitle1,
+                        color: AppColor.grey166),
                   ),
                 ],
               ),
-              Image.asset(Assets.vsImage),
+              Image.asset(
+                Assets.vsImage,
+                width: 50,
+                height: 50,
+              ),
               Column(
                 children: [
-                  Image.asset(Assets.vsImage),
+                  TeamImageAvatar(title: team2Name),
                   BrandText(
-                    data: '${team1Score ?? ""}/${team1Wicket ?? ""}',
+                    data: '${team2Score ?? "0"}/${team2Wicket ?? "0"}',
                   ),
                   BrandText(
-                    data: team1Over ?? "" " ${Strings.over}",
+                    data: team2Over ?? "",
+                    textStyle: BrandTextStyle(
+                        fontSize: BrandFontSize.subtitle1,
+                        color: AppColor.grey166),
                   ),
                 ],
               ),
             ],
+          ),
+          BrandText(
+            data: status ?? "",
+            textStyle: BrandTextStyle(
+                color: AppColor.black,
+                fontWeight: FontWeight.w600,
+                fontSize: BrandFontSize.subtitle1),
           ),
         ],
       ),
