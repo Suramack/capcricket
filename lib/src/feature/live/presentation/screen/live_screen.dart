@@ -1,3 +1,5 @@
+import 'dart:async';
+
 import 'package:capcricket/src/feature/home/presentation/widget/live_match_card_widget.dart';
 import 'package:capcricket/src/feature/home/presentation/widget/no_live_caruosel_widget.dart';
 import 'package:capcricket/src/feature/live/presentation/provider/match_provider.dart';
@@ -16,6 +18,7 @@ class LiveScreen extends ConsumerStatefulWidget {
 
 class _LiveScreenState extends ConsumerState<LiveScreen> {
   late MatchNotifierProvider provider;
+  Timer? timer;
   @override
   void initState() {
     super.initState();
@@ -26,7 +29,15 @@ class _LiveScreenState extends ConsumerState<LiveScreen> {
   }
 
   Future<void> fetchData() async {
-    await provider.getLiveMatch();
+    timer = Timer.periodic(const Duration(seconds: 1), (timer) async {
+      await provider.getLiveMatch();
+    });
+  }
+
+  @override
+  void dispose() {
+    timer?.cancel();
+    super.dispose();
   }
 
   @override

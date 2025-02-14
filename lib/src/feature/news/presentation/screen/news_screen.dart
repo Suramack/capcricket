@@ -36,10 +36,11 @@ class _NewsScreenState extends ConsumerState<NewsScreen> {
 
   Future<void> openNewsDetails({Story? story}) async {
     showNewsInDetails(
-        context: context,
-        headline: story?.hline,
-        intro: story?.intro,
-        title: story?.context);
+      context: context,
+      headline: story?.hline,
+      intro: story?.intro,
+      title: story?.context,
+    );
   }
 
   @override
