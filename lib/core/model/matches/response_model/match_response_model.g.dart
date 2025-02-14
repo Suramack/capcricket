@@ -91,6 +91,18 @@ Map<String, dynamic> _$$Team1ScoreImplToJson(_$Team1ScoreImpl instance) =>
       'inngs1': instance.inngs1,
     };
 
+_$Team2ScoreImpl _$$Team2ScoreImplFromJson(Map<String, dynamic> json) =>
+    _$Team2ScoreImpl(
+      inngs1: json['inngs1'] == null
+          ? null
+          : Inngs1.fromJson(json['inngs1'] as Map<String, dynamic>),
+    );
+
+Map<String, dynamic> _$$Team2ScoreImplToJson(_$Team2ScoreImpl instance) =>
+    <String, dynamic>{
+      'inngs1': instance.inngs1,
+    };
+
 _$SeriesMatchImpl _$$SeriesMatchImplFromJson(Map<String, dynamic> json) =>
     _$SeriesMatchImpl(
       seriesAdWrapper: json['seriesAdWrapper'] == null
@@ -214,11 +226,15 @@ _$MatchScoreImpl _$$MatchScoreImplFromJson(Map<String, dynamic> json) =>
       team1Score: json['team1Score'] == null
           ? null
           : Team1Score.fromJson(json['team1Score'] as Map<String, dynamic>),
+      team2Score: json['team2Score'] == null
+          ? null
+          : Team2Score.fromJson(json['team2Score'] as Map<String, dynamic>),
     );
 
 Map<String, dynamic> _$$MatchScoreImplToJson(_$MatchScoreImpl instance) =>
     <String, dynamic>{
       'team1Score': instance.team1Score,
+      'team2Score': instance.team2Score,
     };
 
 _$MatchImpl _$$MatchImplFromJson(Map<String, dynamic> json) => _$MatchImpl(

@@ -12,6 +12,7 @@ class MatchesRemoteRepo implements MatchesRepo {
     var result = await NetworkClient.get(endPoint: MatchEndPoint.live);
 
     var response = result?.body;
+
     if (response != null) {
       // Convert result to a Map<String, dynamic>
       final jsonMap = jsonDecode(response);
@@ -24,13 +25,35 @@ class MatchesRemoteRepo implements MatchesRepo {
   }
 
   @override
-  Future<void> getRecentMatch() {
-    throw UnimplementedError();
+  Future<MatchResponseModel> getRecentMatch() async {
+    var result = await NetworkClient.get(endPoint: MatchEndPoint.recent);
+    var response = result?.body;
+    await Future.delayed(const Duration(seconds: 2));
+
+    if (response != null) {
+      // Convert result to a Map<String, dynamic>
+      final jsonMap = jsonDecode(response);
+
+      return MatchResponseModel.fromJson(jsonMap);
+    } else {
+      // Handle the case where response is null
+      throw Exception('Response is null');
+    }
   }
 
   @override
-  Future<void> getUpcomingMatch() {
-    throw UnimplementedError();
+  Future<MatchResponseModel> getUpcomingMatch() async {
+    var result = await NetworkClient.get(endPoint: MatchEndPoint.upcoming);
+    var response = result?.body;
+    if (response != null) {
+      // Convert result to a Map<String, dynamic>
+      final jsonMap = jsonDecode(response);
+
+      return MatchResponseModel.fromJson(jsonMap);
+    } else {
+      // Handle the case where response is null
+      throw Exception('Response is null');
+    }
   }
 }
 

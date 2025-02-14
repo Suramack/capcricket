@@ -16,7 +16,9 @@ final _privateConstructorUsedError = UnsupportedError(
 
 /// @nodoc
 mixin _$MatchState {
-  bool get isLoading => throw _privateConstructorUsedError;
+  bool get isLiveMatchCaruoselLoading => throw _privateConstructorUsedError;
+  bool get isLiveMatchLoading => throw _privateConstructorUsedError;
+  bool get isRecentMatchLoading => throw _privateConstructorUsedError;
   bool get isError => throw _privateConstructorUsedError;
   MatchResponseModel? get liveMatchResponse =>
       throw _privateConstructorUsedError;
@@ -39,7 +41,9 @@ abstract class $MatchStateCopyWith<$Res> {
       _$MatchStateCopyWithImpl<$Res, MatchState>;
   @useResult
   $Res call(
-      {bool isLoading,
+      {bool isLiveMatchCaruoselLoading,
+      bool isLiveMatchLoading,
+      bool isRecentMatchLoading,
       bool isError,
       MatchResponseModel? liveMatchResponse,
       MatchResponseModel? recentMatchResponse,
@@ -65,16 +69,26 @@ class _$MatchStateCopyWithImpl<$Res, $Val extends MatchState>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? isLoading = null,
+    Object? isLiveMatchCaruoselLoading = null,
+    Object? isLiveMatchLoading = null,
+    Object? isRecentMatchLoading = null,
     Object? isError = null,
     Object? liveMatchResponse = freezed,
     Object? recentMatchResponse = freezed,
     Object? upcomingMatchResponse = freezed,
   }) {
     return _then(_value.copyWith(
-      isLoading: null == isLoading
-          ? _value.isLoading
-          : isLoading // ignore: cast_nullable_to_non_nullable
+      isLiveMatchCaruoselLoading: null == isLiveMatchCaruoselLoading
+          ? _value.isLiveMatchCaruoselLoading
+          : isLiveMatchCaruoselLoading // ignore: cast_nullable_to_non_nullable
+              as bool,
+      isLiveMatchLoading: null == isLiveMatchLoading
+          ? _value.isLiveMatchLoading
+          : isLiveMatchLoading // ignore: cast_nullable_to_non_nullable
+              as bool,
+      isRecentMatchLoading: null == isRecentMatchLoading
+          ? _value.isRecentMatchLoading
+          : isRecentMatchLoading // ignore: cast_nullable_to_non_nullable
               as bool,
       isError: null == isError
           ? _value.isError
@@ -150,7 +164,9 @@ abstract class _$$MatchStateImplCopyWith<$Res>
   @override
   @useResult
   $Res call(
-      {bool isLoading,
+      {bool isLiveMatchCaruoselLoading,
+      bool isLiveMatchLoading,
+      bool isRecentMatchLoading,
       bool isError,
       MatchResponseModel? liveMatchResponse,
       MatchResponseModel? recentMatchResponse,
@@ -177,16 +193,26 @@ class __$$MatchStateImplCopyWithImpl<$Res>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? isLoading = null,
+    Object? isLiveMatchCaruoselLoading = null,
+    Object? isLiveMatchLoading = null,
+    Object? isRecentMatchLoading = null,
     Object? isError = null,
     Object? liveMatchResponse = freezed,
     Object? recentMatchResponse = freezed,
     Object? upcomingMatchResponse = freezed,
   }) {
     return _then(_$MatchStateImpl(
-      isLoading: null == isLoading
-          ? _value.isLoading
-          : isLoading // ignore: cast_nullable_to_non_nullable
+      isLiveMatchCaruoselLoading: null == isLiveMatchCaruoselLoading
+          ? _value.isLiveMatchCaruoselLoading
+          : isLiveMatchCaruoselLoading // ignore: cast_nullable_to_non_nullable
+              as bool,
+      isLiveMatchLoading: null == isLiveMatchLoading
+          ? _value.isLiveMatchLoading
+          : isLiveMatchLoading // ignore: cast_nullable_to_non_nullable
+              as bool,
+      isRecentMatchLoading: null == isRecentMatchLoading
+          ? _value.isRecentMatchLoading
+          : isRecentMatchLoading // ignore: cast_nullable_to_non_nullable
               as bool,
       isError: null == isError
           ? _value.isError
@@ -212,7 +238,9 @@ class __$$MatchStateImplCopyWithImpl<$Res>
 
 class _$MatchStateImpl implements _MatchState {
   const _$MatchStateImpl(
-      {this.isLoading = false,
+      {this.isLiveMatchCaruoselLoading = false,
+      this.isLiveMatchLoading = false,
+      this.isRecentMatchLoading = false,
       this.isError = false,
       this.liveMatchResponse = null,
       this.recentMatchResponse = null,
@@ -220,7 +248,13 @@ class _$MatchStateImpl implements _MatchState {
 
   @override
   @JsonKey()
-  final bool isLoading;
+  final bool isLiveMatchCaruoselLoading;
+  @override
+  @JsonKey()
+  final bool isLiveMatchLoading;
+  @override
+  @JsonKey()
+  final bool isRecentMatchLoading;
   @override
   @JsonKey()
   final bool isError;
@@ -236,7 +270,7 @@ class _$MatchStateImpl implements _MatchState {
 
   @override
   String toString() {
-    return 'MatchState(isLoading: $isLoading, isError: $isError, liveMatchResponse: $liveMatchResponse, recentMatchResponse: $recentMatchResponse, upcomingMatchResponse: $upcomingMatchResponse)';
+    return 'MatchState(isLiveMatchCaruoselLoading: $isLiveMatchCaruoselLoading, isLiveMatchLoading: $isLiveMatchLoading, isRecentMatchLoading: $isRecentMatchLoading, isError: $isError, liveMatchResponse: $liveMatchResponse, recentMatchResponse: $recentMatchResponse, upcomingMatchResponse: $upcomingMatchResponse)';
   }
 
   @override
@@ -244,8 +278,14 @@ class _$MatchStateImpl implements _MatchState {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$MatchStateImpl &&
-            (identical(other.isLoading, isLoading) ||
-                other.isLoading == isLoading) &&
+            (identical(other.isLiveMatchCaruoselLoading,
+                    isLiveMatchCaruoselLoading) ||
+                other.isLiveMatchCaruoselLoading ==
+                    isLiveMatchCaruoselLoading) &&
+            (identical(other.isLiveMatchLoading, isLiveMatchLoading) ||
+                other.isLiveMatchLoading == isLiveMatchLoading) &&
+            (identical(other.isRecentMatchLoading, isRecentMatchLoading) ||
+                other.isRecentMatchLoading == isRecentMatchLoading) &&
             (identical(other.isError, isError) || other.isError == isError) &&
             (identical(other.liveMatchResponse, liveMatchResponse) ||
                 other.liveMatchResponse == liveMatchResponse) &&
@@ -256,8 +296,15 @@ class _$MatchStateImpl implements _MatchState {
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, isLoading, isError,
-      liveMatchResponse, recentMatchResponse, upcomingMatchResponse);
+  int get hashCode => Object.hash(
+      runtimeType,
+      isLiveMatchCaruoselLoading,
+      isLiveMatchLoading,
+      isRecentMatchLoading,
+      isError,
+      liveMatchResponse,
+      recentMatchResponse,
+      upcomingMatchResponse);
 
   /// Create a copy of MatchState
   /// with the given fields replaced by the non-null parameter values.
@@ -270,14 +317,20 @@ class _$MatchStateImpl implements _MatchState {
 
 abstract class _MatchState implements MatchState {
   const factory _MatchState(
-      {final bool isLoading,
+      {final bool isLiveMatchCaruoselLoading,
+      final bool isLiveMatchLoading,
+      final bool isRecentMatchLoading,
       final bool isError,
       final MatchResponseModel? liveMatchResponse,
       final MatchResponseModel? recentMatchResponse,
       final MatchResponseModel? upcomingMatchResponse}) = _$MatchStateImpl;
 
   @override
-  bool get isLoading;
+  bool get isLiveMatchCaruoselLoading;
+  @override
+  bool get isLiveMatchLoading;
+  @override
+  bool get isRecentMatchLoading;
   @override
   bool get isError;
   @override

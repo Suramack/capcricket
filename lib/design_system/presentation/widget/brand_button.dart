@@ -1,7 +1,7 @@
 import 'package:capcricket/design_system/font/brand_font.dart';
 import 'package:capcricket/design_system/style/brand_space.dart';
 import 'package:capcricket/design_system/style/text_style.dart';
-import 'package:capcricket/design_system/widget/brand_text.dart';
+import 'package:capcricket/design_system/presentation/widget/brand_text.dart';
 import 'package:capcricket/src/theme/colors.dart';
 import 'package:flutter/material.dart';
 

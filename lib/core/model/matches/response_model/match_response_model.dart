@@ -67,6 +67,16 @@ class Team1Score with _$Team1Score {
 }
 
 @freezed
+class Team2Score with _$Team2Score {
+  factory Team2Score({
+    Inngs1? inngs1,
+  }) = _Team2Score;
+
+  factory Team2Score.fromJson(Map<String, dynamic> json) =>
+      _$Team2ScoreFromJson(json);
+}
+
+@freezed
 class SeriesMatch with _$SeriesMatch {
   factory SeriesMatch({
     SeriesAdWrapper? seriesAdWrapper,
@@ -152,6 +162,7 @@ class AdDetail with _$AdDetail {
 class MatchScore with _$MatchScore {
   factory MatchScore({
     Team1Score? team1Score,
+    Team2Score? team2Score,
   }) = _MatchScore;
 
   factory MatchScore.fromJson(Map<String, dynamic> json) =>
